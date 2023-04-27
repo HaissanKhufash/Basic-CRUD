@@ -1,0 +1,46 @@
+{
+  "league": [
+    {
+      "name": "laliga",
+      "champion": "real madrid",
+      "id": 2
+    },
+    {
+      "name": "bundesliga",
+      "champion": "bayern munich",
+      "id": 3
+    },
+    {
+      "name": "serie a",
+      "champion": "ssc napoles",
+      "id": 4
+    },
+    {
+      "name": "premier",
+      "champion": "manchester city",
+      "id": 5
+    }
+  ],
+  "national": [
+    {
+      "name": "conmebol",
+      "champion": "argentina",
+      "id": 1
+    },
+    {
+      "name": "uefa",
+      "champion": "italia",
+      "id": 2
+    },
+    {
+      "name": "concacaf",
+      "champion": "united states",
+      "id": 3
+    },
+    {
+      "name": "acf",
+      "champion": "marrocco",
+      "id": 4
+    }
+  ]
+}

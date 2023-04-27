@@ -1,0 +1,349 @@
+/* CUSTOM PROPERTIES */
+/* Font sizes */
+:root{
+    /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1600,24,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    --step--2: clamp(0.69rem, calc(0.63rem + 0.33vw), 0.96rem);
+    --step--1: clamp(0.83rem, calc(0.74rem + 0.46vw), 1.20rem);
+    --step-0: clamp(1.00rem, calc(0.88rem + 0.63vw), 1.50rem);
+    --step-1: clamp(1.20rem, calc(1.03rem + 0.84vw), 1.88rem);
+    --step-2: clamp(1.44rem, calc(1.21rem + 1.13vw), 2.34rem);
+    --step-3: clamp(1.73rem, calc(1.43rem + 1.50vw), 2.93rem);
+    --step-4: clamp(2.07rem, calc(1.68rem + 1.99vw), 3.66rem);
+    --step-5: clamp(2.49rem, calc(1.97rem + 2.61vw), 4.58rem);
+}
+
+/* Color palette */
+:root{
+    --outer-space: #2B2E2E;
+    --hint-of-red: #F4F0F0;
+    --pink-swan: #C7BCBC;
+    --white: #FFF;
+    --black: #000;
+    --stiletto: #992F2F;
+    --sea-green: #2F9962;
+}
+
+/* Font family */
+:root{
+    --font-family: 'Playfair Display', serif;
+}
+
+/********************/
+
+/* RESET STYLES */
+html{
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    color: var(--outer-space);
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+.step--2{
+    margin: 0;
+    text-align: justify;
+    font-size: var(--step--2);
+}
+
+.step--1{
+    margin: 0;
+    text-align: justify;
+    font-size: var(--step--1);
+}
+
+.step-0{
+    margin: 0;
+    text-align: justify;
+    font-size: var(--step-0);
+}
+
+.step-1{
+    margin: 0;
+    text-align: justify;
+    font-size: var(--step-1);
+}
+
+.step-2{
+    margin: 0;
+    text-align: center;
+    font-size: var(--step-2);
+}
+
+.step-3{
+    margin: 0;
+    text-align: center;
+    font-size: var(--step-3);
+}
+
+.step-4{
+    margin: 0;
+    text-align: center;
+    font-size: var(--step-4);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+li{
+    list-style: none;
+    margin: .25rem;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+body{
+    margin: 0;
+    background-color: var(--hint-of-red);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "header    header  header"
+    "content   content content"
+    "footer    footer  footer";
+    row-gap: .25rem;
+    overflow-x: hidden;
+}
+
+/********************/
+
+/* HEADER */
+.header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 15vh;
+    overflow: hidden hidden;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: var(--hint-of-red);
+    grid-area: header;
+    z-index: 10;
+}
+
+.pages-bar{
+    background-image: linear-gradient(var(--white) 20%, var(--hint-of-red));
+    width: 75%;
+    margin: 0;
+}
+
+.ul-pages{
+    display: flex;
+    margin: 0;
+    justify-content: space-evenly;
+}
+
+/********************/
+
+/* INDEX */
+
+/* Desktop: hidden */
+.aside-desk{
+    display: none;
+    width: auto;
+}
+
+.nav-index-desktop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+/*  Mobile: default */
+.panel-btn{
+    position: fixed;
+    z-index: 20;
+    bottom: 1vh;
+    right: 1vw;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.nav-index-m{
+    background-image: linear-gradient(180deg, var(--pink-swan) 5%, var(--hint-of-red) 45% 90%);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+    z-index: 15;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 35%;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .3s ease, opacity .3s ease;
+    transform: translate(-100%, 0);
+}
+
+.nav.nav-index-m{
+    padding: .25rem;
+}
+
+.nav-index-m--activated{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+}
+
+.ul-sections{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 0;
+}
+
+.title-document{
+    display: none;
+}
+
+.icon-document{
+    display: block;
+}
+
+/********************/
+
+
+/* CONTENT */
+main>section[id]{
+    scroll-margin-top: 15.25ex;
+
+}
+
+main>section{
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: .5rem .25rem;
+    background-color: var(--hint-of-red);
+    grid-area: content;
+}
+
+/* Form */
+.form{
+    margin: .25rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.form *{
+    display: block;
+    margin: .25rem;
+    font-family: var(--font-family);
+    text-align: left;
+    padding: 0;
+}
+
+.textinput{
+    width: 40%;
+    height: auto;
+    border: none;
+    background-image: linear-gradient(45deg, var(--white) 20%, var(--hint-of-red));
+    border-radius: .25rem;
+}
+
+.submitinput{
+    width: 20%;
+    height: auto;
+    background-image: linear-gradient(45deg, var(--white) 20%, var(--hint-of-red));
+    border: none;
+    border-radius: .25rem;
+    text-align: center;
+}
+
+/* Table items */
+.table-items{
+    width: 100%;
+    margin: 1rem;
+}
+
+.table-body{
+    text-align: center;
+}
+
+/********************/
+
+/* FOOTER */
+.footer{
+    width: 100%;
+    grid-area: footer;
+}
+
+/********************/
+
+/* DESKTOP FEATURES*/
+@media screen and (min-width: 700px){
+    body{
+        margin: 0;
+        background-color: var(--hint-of-red);
+        display: grid;
+        grid-template-columns: 40% 30% 30%;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+        "header    header  header"
+        "content   content aside"
+        "footer    footer  footer";
+    }
+
+    .aside-desk{
+        position: sticky;
+        top: 7rem;
+        height: 50vh;
+        grid-area: aside;
+        display: block;
+    }
+
+    .nav-index-m{
+        visibility: hidden;
+    }
+
+    .panel-btn{
+        display: none;
+    }
+
+    .ul-sections{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .title-document{
+        display: block;
+    }
+
+    .icon-document{
+        display: none;
+    }
+}
+
+/********************/
